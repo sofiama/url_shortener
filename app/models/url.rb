@@ -16,4 +16,6 @@ class Url < ActiveRecord::Base
     host_name = protocol + '//' + domain + '/'
     link = host_name + self.short.parameterize
   end
+
+  
 end

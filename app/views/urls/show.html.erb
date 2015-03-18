@@ -1,5 +1,3 @@
 <%= link_to 'home', root_path %>
 
-<%= form_for @url do |f| %>
-<% f.submit "#{@url.show_link}" %>
-<% end %>
+<%= link_to "#{@url.show_link}", url_path, :method => 'patch', :target=> "blank" %>

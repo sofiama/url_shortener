@@ -20,7 +20,6 @@ class UrlsController < ApplicationController
   end
 
   def update
-    binding.pry
     @url = Url.find(params[:id])
     @url.visit_counter += 1
     @url.save
