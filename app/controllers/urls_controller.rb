@@ -1,4 +1,6 @@
 class UrlsController < ApplicationController
+  respond_to :html, :json
+
   def new
     @url = Url.new
   end
@@ -15,6 +17,14 @@ class UrlsController < ApplicationController
 
   def show
     @url = Url.find(params[:id])
+  end
+
+  def update
+    binding.pry
+    @url = Url.find(params[:id])
+    @url.visit_counter += 1
+    @url.save
+    redirect_to @url.original
   end
 
   def index

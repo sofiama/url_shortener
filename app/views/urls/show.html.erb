@@ -1,1 +1,5 @@
-<%= link_to "#{@url.show_link}", @url.original, :target => "_blank" %>
+<%= link_to 'home', root_path %>
+
+<%= form_for @url do |f| %>
+<% f.submit "#{@url.show_link}" %>
+<% end %>
