@@ -4,7 +4,6 @@ class Url < ActiveRecord::Base
 
   def create_short
     str = Base64.urlsafe_encode64(self.id.to_s)
-    str = str.parameterize
 
     self.update(
       :short => str
@@ -15,6 +14,6 @@ class Url < ActiveRecord::Base
     protocol = self.original.split('/')[0]
     domain = self.original.split('/')[2]
     host_name = protocol + '//' + domain + '/'
-    link = host_name + self.short
+    link = host_name + self.short.parameterize
   end
 end
