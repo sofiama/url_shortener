@@ -9,13 +9,16 @@ class UrlsController < ApplicationController
       @url.create_short
       redirect_to @url
     else
-      binding.pry
       render :'new'
     end
   end
 
   def show
     @url = Url.find(params[:id])
+  end
+
+  def index
+    @urls = Url.all
   end
 
   private
