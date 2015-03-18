@@ -9,6 +9,7 @@ class UrlsController < ApplicationController
       @url.create_short
       redirect_to @url
     else
+      binding.pry
       render :'new'
     end
   end
