@@ -16,7 +16,13 @@ class UrlsController < ApplicationController
   end
 
   def show
-    @url = Url.find(params[:id])
+    if params[:id].is_a?(Integer)
+      @url = Url.find(params[:id])
+    else
+     id = Base64.urlsafe_decode64(params[:id])
+     @url = Url.find(id)
+     redirect_to @url.original
+    end
   end
 
   def update
@@ -28,6 +34,9 @@ class UrlsController < ApplicationController
 
   def index
     @urls = Url.all
+  end
+
+  def redirect
   end
 
   private

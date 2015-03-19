@@ -11,10 +11,9 @@ class Url < ActiveRecord::Base
   end
 
   def show_link
-    protocol = self.original.split('/')[0]
-    domain = self.original.split('/')[2]
-    host_name = protocol + '//' + domain + '/'
-    link = host_name + self.short.parameterize
+    host_name = "http://localhost:3000/"
+    path = "urls/" + self.short
+    link = host_name + path
   end
 
   
