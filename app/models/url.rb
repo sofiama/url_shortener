@@ -16,5 +16,4 @@ class Url < ActiveRecord::Base
     link = host_name + path
   end
 
-  
 end

@@ -19,8 +19,7 @@ class UrlsController < ApplicationController
     if params[:id].is_a?(Integer)
       @url = Url.find(params[:id])
     else
-     id = Base64.urlsafe_decode64(params[:id])
-     @url = Url.find(id)
+     @url = Url.find_by(:short => params[:id])
      redirect_to @url.original
     end
   end
