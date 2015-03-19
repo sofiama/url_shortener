@@ -1,12 +1,14 @@
-<%= link_to 'top 100', urls_path %>
-<%= form_for @url do |f| %>
-  <% if @url.errors.any? %>
-    <% @url.errors.messages.each do |param, msg| %>
-      <%= msg.join(', ') %><br/>
+<div class='container'>
+  <%= link_to 'top 100', urls_path %>
+  <%= form_for @url do |f| %>
+    <% if @url.errors.any? %>
+      <% @url.errors.messages.each do |param, msg| %>
+        <%= msg.join(', ') %><br/>
+      <% end %>
     <% end %>
+    <%= f.label :original, 'Url' %>
+    <%= f.text_field :original %>
+    <br/>
+    <%= f.submit %>
   <% end %>
-  <%= f.label :original, 'Url' %>
-  <%= f.text_field :original %>
-  <br/>
-  <%= f.submit %>
-<% end %>
+</div>

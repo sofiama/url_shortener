@@ -1,11 +1,13 @@
-<%= link_to 'home', root_path %>
-<h1>Urls</h1>
+<div class='container'>
+  <%= link_to 'home', root_path %>
+  <h1>Urls</h1>
 
-<ul>
-  <% @urls.each do |url| %>
-  <li><p><%= url.original %></p>
-      <p><%= link_to "#{url.show_link}", url_path(url.id), :method => 'patch', :target=> "blank" %></p>
-      <p><%= url.counter %></p>
-  </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @urls.each do |url| %>
+    <li><p><%= url.original %></p>
+        <p><%= link_to "#{url.show_link}", url_path(url.id), :method => 'patch', :target=> "blank" %></p>
+        <p><%= url.counter %></p>
+    </li>
+    <% end %>
+  </ul>
+</div>
