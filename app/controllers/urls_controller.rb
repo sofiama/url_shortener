@@ -16,11 +16,11 @@ class UrlsController < ApplicationController
   end
 
   def show
-    if params[:id].is_a?(Integer)
+    begin
       @url = Url.find(params[:id])
-    else
-     @url = Url.find_by(:short => params[:id])
-     redirect_to @url.original
+    rescue ActiveRecord::RecordNotFound => e
+      @url = Url.find_by(:short => params[:id])
+      redirect_to @url.original
     end
   end
 
