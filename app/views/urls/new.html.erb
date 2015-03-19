@@ -1,8 +1,8 @@
 <%= link_to 'top 100', urls_path %>
 <%= form_for @url do |f| %>
   <% if @url.errors.any? %>
-    <% @url.errors.full_messages.each do |msg| %>
-      <%= msg %><br/>
+    <% @url.errors.messages.each do |msg| %>
+      <%= msg.join('and ') %><br/>
     <% end %>
   <% end %>
   <%= f.label :original, 'Url' %>
