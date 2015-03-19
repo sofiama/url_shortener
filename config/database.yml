@@ -34,3 +34,7 @@ default: &default
 development:
   <<: *default
   database: url_shortener_development
+
+test:
+  <<: *default
+  database: url_test

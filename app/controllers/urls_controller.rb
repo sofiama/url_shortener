@@ -7,11 +7,10 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(url_params)
-    if @url.valid? && @url.save
+    if @url.save
       @url.create_short
       redirect_to @url
     else
-      binding.pry
       render :'new'
     end
   end

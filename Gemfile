@@ -40,3 +40,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'pry'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
