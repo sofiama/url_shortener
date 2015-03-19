@@ -21,7 +21,7 @@ class UrlsController < ApplicationController
 
   def update
     @url = Url.find(params[:id])
-    @url.visit_counter += 1
+    @url.counter += 1
     @url.save
     redirect_to @url.original
   end

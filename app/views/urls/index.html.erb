@@ -5,7 +5,7 @@
   <% @urls.each do |url| %>
   <li><p><%= url.original %></p>
       <p><%= link_to "#{url.show_link}", url_path(url.id), :method => 'patch', :target=> "blank" %></p>
-      <p><%= url.visit_counter %></p>
+      <p><%= url.counter %></p>
   </li>
   <% end %>
 </ul>

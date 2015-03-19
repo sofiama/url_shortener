@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318163135) do
+ActiveRecord::Schema.define(version: 20150319031110) do
 
   create_table "urls", force: true do |t|
     t.string   "original"
     t.string   "short"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "visit_counter", default: 0
+    t.integer  "counter",    default: 0
   end
 
 end
