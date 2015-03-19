@@ -5,7 +5,9 @@ class Url < ActiveRecord::Base
 
   validate :invalid_url
 
-  CHARS = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
+  chars = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
+  omitted_chars = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 0, 1]
+  CHARS = (chars - omitted_chars).shuffle.join
   BASE = CHARS.length
 
   def encode
