@@ -1,7 +1,7 @@
 <%= link_to 'top 100', urls_path %>
 <%= form_for @url do |f| %>
   <% if @url.errors.any? %>
-    <% @url.errors.messages.each do |msg| %>
+    <% @url.errors.messages.each do |attr, msg| %>
       <%= msg.join('and ') %><br/>
     <% end %>
   <% end %>
