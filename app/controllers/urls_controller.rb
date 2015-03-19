@@ -7,7 +7,7 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(url_params)
-    if @url.save
+    if @url.save && @url.valid?
       @url.create_short
       redirect_to @url
     else
@@ -32,7 +32,7 @@ class UrlsController < ApplicationController
   end
 
   def index
-    @urls = Url.all
+    @urls = Url.all.order(:counter => :desc)
   end
 
   def redirect

@@ -3,7 +3,7 @@ class Url < ActiveRecord::Base
   validates_presence_of :original
   validates_uniqueness_of :short, :allow_blank => true
 
-  # validate :invalid_url
+  validate :invalid_url
 
   def create_short
     str = Base64.urlsafe_encode64(self.id.to_s)
@@ -21,7 +21,7 @@ class Url < ActiveRecord::Base
 
   private
     def invalid_url
-      if self.original =~ /\A#{URI::regexp(['http', 'https'])}\z/
+      if !(self.original =~ /\A#{URI::regexp(['http', 'https'])}\z/)
         errors.add(:original, 'must be a valid url')
       end
     end
