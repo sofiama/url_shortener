@@ -8,7 +8,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new(url_params)
     if @url.save && @url.valid?
-      @url.create_short
+      @url.update_short
       redirect_to @url
     else
       render :'new'

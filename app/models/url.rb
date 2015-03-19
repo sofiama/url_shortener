@@ -5,10 +5,34 @@ class Url < ActiveRecord::Base
 
   validate :invalid_url
 
-  def create_short
-    str = Base64.urlsafe_encode64(self.id.to_s)
+  CHARS = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
+  BASE = CHARS.length
+
+  def encode
+    num = self.id - 1
+    return CHARS[0] if num == 0
+
+    str = ""
+
+    while num > 0
+      str << CHARS[(num % BASE)]
+      num /= BASE
+    end
+    str
+  end
+
+  def decode
+    i = 0 
+
+    self.short.each_char do |c|
+      i = i * BASE + CHARS.index(c)
+    end
+    i
+  end
+
+  def update_short
     self.update(
-      :short => str
+      :short => self.encode
       )
   end
 
