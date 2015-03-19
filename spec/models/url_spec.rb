@@ -16,9 +16,9 @@ RSpec.describe Url, :type => :model do
     expect(@url.counter).to eq(0)
   end
 
-  # describe '#create_short' do
-  #   it 'uses base64 to encode its id to a urlsafe string' do
-  #     expect(@url.create_short).to eq(@url.create)
-  #   end
-  # end
+  describe '#create_short' do
+    it 'uses base64 to encode its id to a urlsafe string' do
+      expect(@url.create_short).to eq(@url.create)
+    end
+  end
 end
