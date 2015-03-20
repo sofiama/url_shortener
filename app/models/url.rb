@@ -38,7 +38,7 @@ class Url < ActiveRecord::Base
   end
 
   def short_path
-    path = "urls/" + self.short
+    path = "/urls/" + self.short
   end
 
   private
