@@ -1,77 +1,88 @@
-html, body{
-  height: 100%
+body, html{
+  height: 100%;
 }
-body{
-  padding-top: 70px;
+
+.center{
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.center-content{
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.navbar-brand:hover{
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+
+#navbar li{
+  margin-left:  20px;
+}
+
+#navbar li a{
+  font-size: 16px;
+}
+
+#navbar li a:hover{
+  background: none;
+}
+
+.padding-top-bottom {
+    padding:  200px 0;
+}
+
+.section-title{
+  position: relative;
+  margin-bottom: 40px;
+  font-size: 64px;
+  line-height: 78px;
+  font-weight: 100;
+  letter-spacing: 0;
   text-align: center;
 }
 
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+.section-title:after{
+    display: block;
+    content: "";
+    width: 100px;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    margin-left: -50px;
+    background: #F17370;
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 60px;
 }
 
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 30px;
+input,
+.btn-custom,
+.btn-custom:focus {
+  font-weight: 400;
+  background: #F17370;
+  color: #FFFFFF;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
 }
 
-.cover {
-  padding: 0 20px;
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
+.btn-custom:hover{
+  color: #FFFFFF;
+  background: #F26663;
 }
 
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
+.custom{
+  color: #F17370;
 }
 
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
-  }
+.custom:hover{
+  color: #F17370;
 }

@@ -1,9 +1,8 @@
-<div class="site-wrapper">
-  <div class="site-wrapper-inner">
-    <div class="cover-container">
-      <div class="inner cover">
-        <h2><%= link_to "#{@url.show_link}", url_path, :method => 'patch', :target=> "blank" %></h2>
-      </div>
+<div class="container padding-top-bottom">
+  <h1 class="section-title">Here's your link!</h1>
+  <div class="row">
+    <div class='col-md-6 col-md-offset-3'>
+      <h2 class="text-center"><%= link_to "#{@url.show_link}", url_path, :method => 'patch', :target=> "blank", :class=> 'custom' %></h2>
     </div>
   </div>
 </div>

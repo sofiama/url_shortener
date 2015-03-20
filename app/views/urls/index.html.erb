@@ -1,13 +1,29 @@
-<div class='container'>
-  <%= link_to 'home', root_path %>
-  <h1>Urls</h1>
+<div class='container padding-top-bottom'>
+  <h1 class="section-title">Top 100</h1>
 
-  <ul>
-    <% @urls.each do |url| %>
-    <li><p><%= url.original %></p>
-        <p><%= link_to "#{url.show_link}", url_path(url.id), :method => 'patch', :target=> "blank" %></p>
-        <p><%= url.counter %></p>
-    </li>
-    <% end %>
-  </ul>
+  <div class='row'>
+    <div class="col-md-10 col-md-offset-1">
+      <div class='table-responsive'>
+        <table class="table table-hover">     
+            <thead>
+              <tr>
+                <th class="text-center">Original Url</th>
+                <th class="text-center">Shortened</th>
+                <th class="text-center">Hit Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @urls.each do |url| %>
+              <tr>
+                <td><%= link_to "#{url.original}", url.original, :target => "blank" %></td>
+                <td><%= link_to "#{url.show_link}", url_path(url.id), :method => 'patch', :target=> "blank", :class => 'text-center' %></td>
+                <td class="text-center"><%= url.counter %></td>
+              </tr>
+              <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
 </div>

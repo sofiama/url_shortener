@@ -1,26 +1,21 @@
-<div class="site-wrapper">
-  <div class="site-wrapper-inner">
-    <div class="cover-container">
-
-      <div class="inner cover">
-        <%= form_for @url, :class => 'form-inline', :role => 'form' do |f| %>
-          <div class="form-group">
-            <% if @url.errors.any? %>
-              <% @url.errors.messages.each do |param, msg| %>
-                <%= msg.join(', ') %><br/>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="form-group">
-            <%#= f.label :original, 'Enter Url' %>
-            <%= f.text_field :original, :class=> 'form-control input-lg', :placeholder => 'https://google.com' %>
-          </div>
-          <%= f.submit 'Shorten Me!', :class => 'btn btn-default btn-lg' %>
-          <%#= button_tag( :class => "btn btn-default") do %>
-            <!-- Shorten Me! <i class="fa fa-heart"></i> -->
-          <%# end %>
+<div class='container padding-top-bottom'>
+  <h1 class="section-title">Shorten your URL</h1>
+  <div class='col-md-6 col-md-offset-3'>
+    <%= form_for @url, :class => 'form-inline', :role => 'form' do |f| %>
+      <div class="input-group">
+        <%#= f.label :original, 'Enter Url' %>
+        <%= f.text_field :original, :class=> 'form-control input-lg', :placeholder => 'https://google.com', :onfocus => "this.placeholder = ''" %>
+        <span class="input-group-btn">
+          <%= f.submit 'Shorten Me!', :class => 'btn btn-custom btn-lg' %>
+        </span>
+      </div>
+      <div class="form-group">
+        <% if @url.errors.any? %>
+          <% @url.errors.messages.each do |param, msg| %>
+            <%= msg.join(', ') %><br/>
+          <% end %>
         <% end %>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
