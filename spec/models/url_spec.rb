@@ -46,9 +46,9 @@ RSpec.describe Url, :type => :model do
   end
 
   describe "#show_link" do
-    it "contains the host name and the short path" do 
+    it "should have the short path" do 
       @url.update(:short => @url.encode)
-      expect(@url.show_link).to eq("http://localhost:3000/urls/#{@url.short}")
+      expect(@url.show_link).to include("/#{@url.short}")
     end
   end
 
