@@ -37,10 +37,8 @@ class Url < ActiveRecord::Base
       )
   end
 
-  def show_link
-    host_name = "http://localhost:3000/"
-    path = "urls/" + self.short
-    link = host_name + path
+  def short_path
+    path = "/urls/" + self.short
   end
 
   private
