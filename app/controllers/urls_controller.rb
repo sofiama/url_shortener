@@ -1,5 +1,4 @@
 class UrlsController < ApplicationController
-  respond_to :html, :json
 
   def new
     @url = Url.new
