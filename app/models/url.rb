@@ -20,16 +20,15 @@ class Url < ActiveRecord::Base
       str << CHARS[(num % BASE)]
       num /= BASE
     end
-    str
+    str.reverse
   end
 
   def decode
-    i = 0 
-
+    i = 0
     self.short.each_char do |c|
       i = i * BASE + CHARS.index(c)
     end
-    i
+    i + 1
   end
 
   def update_short
