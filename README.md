@@ -26,7 +26,14 @@ Rails app that creates the shortest possible url
   * `bundle install`
   * `rake db:create`
   * `rake db:migrate`
-  * `rails s`
+
+5. edit host_name
+  * open url.rb
+  * change line 41 with your host_name with a trailing slash
+    * `host_name = "YOUR_HOST_NAME/"` (ex: `host_name = 'http://localhost:3000/'`)
+  * save the changes
+ 
+6. run `rails s`
 
 ## Challenges and how they were overcame
 
