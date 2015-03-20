@@ -38,7 +38,7 @@ class Url < ActiveRecord::Base
   end
 
   def show_link
-    host_name = "http://localhost:3000/"
+    host_name = "http://shrtnswt.herokuapp.com/"
     path = "/urls/" + self.short
     link = host_name + path
   end
