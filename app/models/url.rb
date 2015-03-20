@@ -5,6 +5,8 @@ class Url < ActiveRecord::Base
 
   validate :invalid_url
 
+  HOST_NAME = "http://shrtnswt.herokuapp.com/"
+
   chars = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
   omitted_chars = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 0]
   CHARS = (chars - omitted_chars).shuffle.join
@@ -38,9 +40,8 @@ class Url < ActiveRecord::Base
   end
 
   def show_link
-    host_name = "http://shrtnswt.herokuapp.com/"
     path = "/urls/" + self.short
-    link = host_name + path
+    link = HOST_NAME + path
   end
 
   private
