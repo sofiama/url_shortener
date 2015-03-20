@@ -17,6 +17,7 @@ class UrlsController < ApplicationController
   def show
     begin
       @url = Url.find(params[:id])
+      @link = "#{request.protocol}#{request.host_with_port}#{@url.short_path}" 
     rescue ActiveRecord::RecordNotFound => e
       @url = Url.find_by(:short => params[:id])
       redirect_to @url.original
@@ -32,6 +33,7 @@ class UrlsController < ApplicationController
 
   def index
     @urls = Url.all.order(:counter => :desc).first(100)
+    @host_name = "#{request.protocol}#{request.host_with_port}"
   end
 
   def redirect
