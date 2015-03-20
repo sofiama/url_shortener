@@ -32,7 +32,7 @@ class UrlsController < ApplicationController
   end
 
   def index
-    @urls = Url.all.order(:counter => :desc)
+    @urls = Url.all.order(:counter => :desc).first(100)
   end
 
   def redirect

@@ -86,3 +86,20 @@ input,
 .custom:hover{
   color: #F17370;
 }
+
+.original a{
+  color: #5B5B5B;
+}
+
+.original a:hover{
+  color: #090909;
+  text-decoration: none;
+}
+
+.short a:hover{
+  text-decoration: none;
+}
+
+/*.table tbody tr:nth-child(even){
+  background-color: rgba(241, 115, 112, 0.2) ;
+}*/

@@ -5,12 +5,13 @@
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-bars"></i>
       </button>
-      <%= link_to 'Url Shorteneer', root_path, :class => 'navbar-brand' %>
+      <%= link_to 'Shrt n Swt', root_path, :class => 'navbar-brand' %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Top 100', urls_path %></a></li>
+        <li><%= link_to 'Most Recent Url', url_path(Url.all.last) %></li>
+        <li><%= link_to 'Top 100', urls_path %></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
