@@ -16,8 +16,7 @@ class UrlsController < ApplicationController
 
   def show
     begin
-      @url = Url.find(params[:id])
-      @link = "#{request.protocol}#{request.host_with_port}#{@url.short_path}" 
+      @url = Url.find(params[:id]) 
     rescue ActiveRecord::RecordNotFound => e
       @url = Url.find_by(:short => params[:id])
       redirect_to @url.original

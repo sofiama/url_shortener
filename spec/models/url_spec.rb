@@ -45,11 +45,10 @@ RSpec.describe Url, :type => :model do
     end
   end
 
-  describe "#short_path" do
+  describe "#show_link" do
     it "should have the short path" do
       @url.update(:short => @url.encode)
-      @link = "http://localhost:3000/#{@url.short_path}"
-      expect(@link).to include("/urls/#{@url.short}")
+      expect(@url.show_link).to include("/urls/#{@url.short}")
     end
   end
 
