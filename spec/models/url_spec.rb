@@ -20,8 +20,8 @@ RSpec.describe Url, :type => :model do
     expect(@url.counter).to eq(0)
   end
 
-  it "has its own character set from a-z, A-Z, 0-9 that does not contain vowels and the numbers 0, 1, 3" do 
-    expect(CHARS).not_to include("aeuiouAEIOU013")
+  it "has its own character set from a-z, A-Z, 0-9 that does not contain vowels and the numbers 0" do 
+    expect(CHARS).not_to include("aeuiouAEIOU0")
   end
 
   describe "#encode" do
@@ -56,6 +56,7 @@ RSpec.describe Url, :type => :model do
   describe "#invalid_url" do
     it "validates that the url is of form http:// or https://" do
       expect(@url.original).to include("http")
+      expect(@url.original).to include("https")
       expect(@url.original).not_to be_empty
     end
   end

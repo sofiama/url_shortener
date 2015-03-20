@@ -9,10 +9,11 @@
           <%= f.submit 'Shorten Me!', :class => 'btn btn-custom btn-lg' %>
         </span>
       </div>
-      <div class="form-group">
+      <div class="form-group error">
         <% if @url.errors.any? %>
           <% @url.errors.messages.each do |param, msg| %>
-            <%= msg.join(', ') %><br/>
+            <span><%= msg.join(', ') %></span><br/>
+          </div>
           <% end %>
         <% end %>
       </div>
