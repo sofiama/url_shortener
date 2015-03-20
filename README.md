@@ -1,8 +1,8 @@
 # shrtnswt
 
-http://shrtnswt.herokuapp.com/
-
 Rails app that creates the shortest possible url
+
+http://shrtnswt.herokuapp.com/
 
 ## The setup
 
@@ -29,15 +29,15 @@ Rails app that creates the shortest possible url
 
 5. edit host_name
   * open url.rb
-  * change line 41 with your host_name with a trailing slash
-    * `host_name = "YOUR_HOST_NAME/"` (ex: `host_name = 'http://localhost:3000/'`)
+  * change line 8 with your host_name with a trailing slash
+    * `HOST_NAME = "YOUR_HOST_NAME/"` (ex: `HOST_NAME = "http://localhost:3000/"`)
   * save the changes
  
 6. run `rails s`
 
-## Challenges and how they were overcame
+## Overcoming Challenges
 
-1. Creating the algorithm for the shortest possible url.
+1. Creating the algorithm for the shortest possible url
   * Started out with just using Base64.url_encode64 to encode the original url's id
   * Since the task was to create the shortest possible url, the algorithm was changed (*see below under design decision*)
 2. Redirecting depending on the params
@@ -49,7 +49,7 @@ Rails app that creates the shortest possible url
 1. Encode and decode algorithms (aka the short url scheme)
   * Given that the task was to create the smallest possible url, then urls will start with one character, until all characters have been used then two chracters will start being used and so on.
   * Chose to have a character set of using letters a-z, A-Z, and digits 0-9, since those are easily read.
-  * Decided to remove vowels and number 0 from the character set in the event that the short url was possibly offensive or can cause confusion (the number 0 and the letter O).
+  * Decided to remove vowels and the number 0 from the character set in the event that the short url was possibly offensive or can cause confusion (the number 0 and the letter O).
 2. Form validation of url to inform user why the short url was not created. Messages are as follows:
   * cannot be empty
   * must be valid url (ie. type http or https)
@@ -74,3 +74,5 @@ Rails app that creates the shortest possible url
 * Possibly create a counter model, so all urls has_one counter
   * so that it can render json
 * Add animation using js
+* Responsive website
+* Possibly make HOST_NAME dynamic
