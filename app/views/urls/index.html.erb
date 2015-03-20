@@ -16,7 +16,7 @@
               <% @urls.each do |url| %>
               <tr>
                 <td class='original'><%= link_to "#{url.original}", url.original, :target => "blank" %></td>
-                <td class='text-center short'><%= link_to "#{@link}#{url.short_path}", url_path(url.id), :method => 'patch', :target=> "blank" %></td>
+                <td class='text-center short'><%= link_to "#{@host_name}#{url.short_path}", url_path(url.id), :method => 'patch', :target=> "blank" %></td>
                 <td class="text-center counter"><%= url.counter %></td>
               </tr>
               <% end %>
