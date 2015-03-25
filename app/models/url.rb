@@ -5,7 +5,7 @@ class Url < ActiveRecord::Base
 
   validate :invalid_url
 
-  HOST_NAME = "http://shrtnswt.herokuapp.com/"
+  HOST_NAME = "http://shrtnswt.herokuapp.com"
 
   chars = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a
   omitted_chars = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 0]

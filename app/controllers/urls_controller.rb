@@ -32,10 +32,6 @@ class UrlsController < ApplicationController
 
   def index
     @urls = Url.all.order(:counter => :desc).first(100)
-    @host_name = "#{request.protocol}#{request.host_with_port}"
-  end
-
-  def redirect
   end
 
   private
