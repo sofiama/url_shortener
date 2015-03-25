@@ -29,8 +29,8 @@ http://shrtnswt.herokuapp.com/
 
 5. edit host_name
   * open url.rb
-  * change line 8 with your host_name with a trailing slash
-    * `HOST_NAME = "YOUR_HOST_NAME/"` (ex: `HOST_NAME = "http://localhost:3000/"`)
+  * change line 8 with your host_name
+    * `HOST_NAME = "YOUR_HOST_NAME"` (ex: `HOST_NAME = "http://localhost:3000"`)
   * save the changes
  
 6. run `rails s`
